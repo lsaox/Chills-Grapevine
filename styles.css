@@ -1,14 +1,9 @@
 @font-face {
   font-family: 'Bronco';
-  src: url('Fonts/BroncoRegular.woff2') format('woff2'),
-       url('Fonts/BroncoRegular.woff') format('woff');
+  src: url('assets/Fonts/BroncoRegular.woff2') format('woff2'),
+       url('assets/Fonts/BroncoRegular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-body {
-  font-family: 'Bronco', sans-serif;
-
-
-}
 
