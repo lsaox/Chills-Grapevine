@@ -304,7 +304,7 @@ footer .small {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 400px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .taste-the-best-section img {
@@ -344,7 +344,7 @@ footer .small {
 
     <div class="navbar-icons order-3 d-flex gap-3">
       <a href="tel:+1234567890" aria-label="Call us"><i class="fas fa-phone"></i></a>
-      <a href="https://goo.gl/maps/your-location" target="_blank" rel="noopener" aria-label="Find us on map"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="https://www.google.com/maps/dir//814+S+Main+St,+Grapevine,+TX+76051/@32.9330664,-97.1610254,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x864c2b24ebfbef9b:0x3f7542adc163c339!2m2!1d-97.0786242!2d32.9330934?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" aria-label="Find us on map"><i class="fas fa-map-marker-alt"></i></a>
     </div>
 
     <div class="collapse navbar-collapse w-100 mt-3 order-4" id="navbarNav">
@@ -368,34 +368,108 @@ footer .small {
 </nav>
 
 <!-- Hero Section -->
-<section class="hero">
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center text-center text-white" 
+style="background: url('assets/heroo.png') center/cover no-repeat; min-height: 100vh;">
   <div class="container">
     <h1>Welcome to Chill Grapevine</h1>
     <p>Your go-to bar for good drinks, better music, and the best crowd.</p>
     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
       <a href="#" class="btn btn-primary">Our Menu</a>
-      <a href="#" class="btn btn-primary">Local Events</a>
+      <a href="#" class="btn btn-primary">Events</a>
     </div>
   </div>
 </section>
 
+<style>
+  @media (max-width: 767.98px) {
+    .hero {
+      min-height: 50vh !important;  /* force half screen height */
+      height: 50vh !important;
+      padding: 0 !important;
+      background-position: center !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .hero .container {
+      padding: 0 1rem !important;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .hero p {
+      font-size: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .hero .btn {
+      font-size: 0.9rem !important;
+      padding: 0.5rem 1.2rem !important;
+    }
+  }
+</style>
+
 <!-- Experience Section -->
-<section class="py-5 bg-light" id="experience">
+<section class="py-5" id="experience" style="background-color: #fff0d4;">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
-        <h2 class="display-5 fw-bold mb-3" style="font-family: 'Bronco', serif;">Bar & Restaurant in the Heart of Grapevine</h2>
+      <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start" data-aos="fade-up">
+        <h2 class="display-5 fw-bold mb-3" style="font-family: 'Bronco', serif;">
+          Bar & Restaurant in the Heart of Grapevine
+        </h2>
       
         <p class="text-muted">
           DJs and local bands take the stage weekly, setting the tone for unforgettable nights. Whether you're unwinding after work or celebrating big, Chill brings the energy with every set.
         </p>
         <p class="text-muted">
-          With a menu full of crowd favorites, cocktails that pop on camera, and patios perfect for soaking in the night, Chill Grapevine is your go-to for food, music, and great company.
+          With a menu full of crowd favorites, cocktails that p<style>
+  /* Universal Chill Button Style */
+  .btn,
+  .btn-primary {
+    background: linear-gradient(135deg, rgb(99, 0, 0), #460000) !important;
+    color: #fff !important;
+    border: 2px solid #ff474794 !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    padding: 0.75rem 1.75rem;
+    box-shadow: 0 0 15px rgba(255, 70, 70, 0.6);
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover,
+  .btn-primary:hover {
+    background: #ff4747 !important;
+    color: #fff !important;
+    box-shadow: 0 0 25px rgba(255, 70, 70, 0.9);
+    transform: scale(1.05);
+  }
+
+  /* Optional tweak for smaller screens */
+  @media (max-width: 767.98px) {
+    .btn,
+    .btn-primary {
+      font-size: 0.9rem !important;
+      padding: 0.6rem 1.4rem !important;
+    }
+  }
+</style>op on camera, and patios perfect for soaking in the night, Chill Grapevine is your go-to for food, music, and great company.
         </p>
         <p class="text-muted">
           From game nights to live shows and weekend turn-ups — there's always something going on. Come for the drinks, stay for the music, and leave with a night worth remembering.
         </p>
-        <a href="#events" class="btn btn-primary mt-3">See Upcoming Events</a>
+
+        <!-- Centered Button -->
+        <div class="text-center">
+          <a href="#events" class="btn btn-primary mt-3">See Upcoming Events</a>
+        </div>
       </div>
 
       <div class="col-lg-6" data-aos="fade-down">
@@ -406,9 +480,6 @@ footer .small {
     </div>
   </div>
 </section>
-
-
-
 
 
 
@@ -549,7 +620,7 @@ footer .small {
   .pdf-menu-section {
     background: linear-gradient(-45deg, #000000, #330000, #111111, #550000);
     background-size: 400% 400%;
-    animation: pdfShift 20s ease infinite;
+    animation: pdfShift 15s ease infinite;
     overflow: hidden;
   }
 
@@ -588,6 +659,174 @@ footer .small {
     }
   }
 </style>
+<section id="specials" class="specials-section text-white text-center py-5" 
+  style="font-family: 'Bronco', serif; 
+         background: url('assets/Wood2.png') center/cover no-repeat fixed; 
+         position: relative; 
+         overflow: hidden;">
+
+  <style>
+    /* Title Glow */
+    .glow-title {
+      text-shadow: 0 0 20px #5a0000, 0 0 40px #5d00005f, 0 0 60px #4d0000;
+      color: #ffffff;
+      position: relative;
+      z-index: 2;
+      animation: flickerOn 2.5s ease-in-out;
+    }
+
+    /* Flicker animation (neon turning on) */
+    @keyframes flickerOn {
+      0% { opacity: 0; text-shadow: none; }
+      10% { opacity: 1; text-shadow: 0 0 5px #ff0000; }
+      20% { opacity: 0.3; }
+      40% { opacity: 1; text-shadow: 0 0 15px #ff1a1a, 0 0 30px #ff0000; }
+      60% { opacity: 0.5; }
+      80% { opacity: 1; text-shadow: 0 0 20px #ff4b4b, 0 0 40px #ff1a1a; }
+      100% { opacity: 1; }
+    }
+
+    /* Neon Board */
+    .specials-board {
+      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 0%, rgba(10, 0, 0, 0.85) 100%);
+      border: 2px solid rgba(255, 0, 0, 0.4);
+      border-radius: 25px;
+      box-shadow:
+        0 0 30px rgba(255, 0, 0, 0.3),
+        inset 0 0 25px rgba(255, 0, 0, 0.2),
+        0 0 10px rgba(255, 0, 0, 0.2);
+      padding: 3rem 2rem;
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+      max-width: 900px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Glowing border */
+ 
+
+    .specials-board-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Weekday Headers */
+    .specials-day {
+      color: #ffe4b9;
+      font-size: 2.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px #000000, 0 0 25px #000000;
+      text-transform: uppercase;
+      animation: flickerOn 2.8s ease-in-out;
+    }
+
+    /* Events under each day */
+    .specials-events {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    /* Fade in when visible */
+    .specials-board.animate .specials-events {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Neon Colors */
+    .food-drink {
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff, 0 0 25px #0099ff;
+      font-weight: 500;
+    }
+
+    .event {
+      color: #ff2828;
+      text-shadow: 0 0 10px #000000, 0 0 25px #cccccc;
+      font-weight: 500;
+    }
+
+    .dj {
+      color: #fff86b;
+      text-shadow: 0 0 10px #fff86b, 0 0 25px #ffef00;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .specials-day { font-size: 1.8rem; }
+      .specials-events { font-size: 1.05rem; }
+      .specials-board { padding: 2rem 1.5rem; }
+    }
+  </style>
+
+  <div class="container position-relative">
+    <h2 class="display-4 fw-bold text-uppercase mb-5 glow-title">Weekly Specials & Events</h2>
+
+    <div class="specials-board" id="specialsBoard">
+      <div class="specials-board-content">
+
+        <div class="specials-day">Monday</div>
+        <div class="specials-events">
+          <span class="food-drink">All Day Happy Hour • Half Off Pizzas</span><br>
+          <span class="event">Trivia @ 8PM • Karaoke @ 10PM</span>
+        </div>
+
+        <div class="specials-day">Tuesday</div>
+        <div class="specials-events">
+          <span class="food-drink">$1.50 Tacos from 3PM • $3 Dos XX, Corona, Modelo Bottles</span><br>
+          <span class="event">BS Bingo @ 8PM • Karaoke @ 10PM</span>
+        </div>
+
+        <div class="specials-day">Wednesday</div>
+        <div class="specials-events">
+          <span class="food-drink">All Day Happy Hour • Half Off Burgers</span><br>
+          <span class="event">Karaoke @ 10PM</span>
+        </div>
+
+        <div class="specials-day">Thursday</div>
+        <div class="specials-events">
+          <span class="food-drink">All Day Happy Hour • $8.99 Chicken Fried Steak</span><br>
+          <span class="dj">DJ @ 10PM</span>
+        </div>
+
+        <div class="specials-day">Friday</div>
+        <div class="specials-events">
+          <span class="food-drink">Happy Hour Until 7PM</span><br>
+          <span class="dj">DJ @ 10PM</span>
+        </div>
+
+        <div class="specials-day">Saturday</div>
+        <div class="specials-events">
+          <span class="food-drink">Happy Hour Until 7PM • $1.99 Mimosas • $2.99 Bloodys • Brunch till 3PM</span><br>
+          <span class="dj">DJ @ 10PM</span>
+        </div>
+
+        <div class="specials-day">Sunday</div>
+        <div class="specials-events">
+          <span class="food-drink">All Day Happy Hour • $1.99 Mimosas • $2.99 Bloodys • Brunch till 3PM • $3 Shiner Pints</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Trigger the fade-in animation when scrolled into view
+    const specialsBoard = document.getElementById('specialsBoard');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) specialsBoard.classList.add('animate');
+      });
+    }, { threshold: 0.3 });
+    observer.observe(specialsBoard);
+  </script>
+</section>
 
 
 <!-- Weekly Specials & Events Section -->
@@ -599,9 +838,9 @@ footer .small {
       <!-- Left Side (Text) -->
       <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center text-side">
         <div class="content-box px-4">
-          <h2 class="display-3 fw-bold text-uppercase mb-4">Happy Hour</h2>
+          <h2 class="display-3 fw-bold text-uppercase mb-4">Chill Happy Hour</h2>
           <h4 class="fw-bold text-light mb-3 fs-2">Monday – Thursday</h4>
-          <p class="lead mb-4 fs-3">4:00 pm – 7:00 pm</p>
+          <p class="lead mb-4 fs-3">All Day </p>
           <hr class="border-light w-50 mb-4 mx-auto">
 
           <ul class="list-unstyled fs-4 mb-4">
@@ -623,6 +862,20 @@ footer .small {
     </div>
   </div>
 </section>
+<!-- Specials Section (Neon Glow Sign on Wooden Background) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Styles -->
 <style>
@@ -632,7 +885,7 @@ footer .small {
   }
 
   .text-side {
-    background: linear-gradient(135deg, #a30000, #6b0000);
+    background: linear-gradient(135deg, rgb(99, 0, 0), #460000);
     min-height: 75vh;
     display: flex;
     justify-content: center;
@@ -641,7 +894,7 @@ footer .small {
   }
 
   .content-box {
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .img-side img {
@@ -675,7 +928,7 @@ footer .small {
 <!-- Live Events Section -->
 <section class="live-events-section py-5 text-center text-white" style="font-family: 'Bronco', serif;">
   <div class="container position-relative">
-    <h2 class="display-5 fw-bold mb-4 animate-fadeup">Live Music & Events</h2>
+    <h2 class="display-5 fw-bold mb-4 animate-fadeup">Live Music</h2>
     <p class="lead mb-5 text-light animate-fadeup">Experience unforgettable nights filled with live performances, local talent, and good vibes!</p>
 
     <!-- Image Collage -->
@@ -778,6 +1031,84 @@ footer .small {
     box-shadow: 0 0 15px rgba(255, 50, 50, 0.7);
   }
 </style>
+
+<!-- Chill Moments Collage Section -->
+<section id="chill-moments" class="chill-family-section text-white py-5" style="background-color: #180606; font-family: 'Bronco', serif;">
+  <div class="container text-center mb-5">
+    <h2 class="display-5 fw-bold text-uppercase">Chill Moments</h2>
+  </div>
+
+  <div class="collage-container">
+    <div class="collage-item" data-aos="fade-up"><img src="assets/Chill6.jpg" alt=""></div>
+    <div class="collage-item tall" data-aos="fade-down"><img src="assets/Chill2.jpg" alt=""></div>
+    <div class="collage-item" data-aos="fade-up"><img src="assets/chill3.jpg" alt=""></div>
+    <div class="collage-item" data-aos="fade-down"><img src="assets/chill4.jpg" alt=""></div>
+    <div class="collage-item" data-aos="fade-up"><img src="assets/chill5.jpg" alt=""></div>
+
+  </div>
+</section>
+
+<style>
+.chill-family-section {
+  background-color: #180606;
+  padding: 80px 0;
+}
+
+.collage-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+  gap: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.collage-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.collage-item:hover img {
+  transform: scale(1.05);
+}
+
+.collage-item.tall {
+  grid-row: span 2;
+}
+
+@media (max-width: 992px) {
+  .collage-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .collage-container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+}
+</style>
+
+<!-- Include AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
 
 
 
@@ -904,35 +1235,6 @@ footer .small {
     box-shadow: 0 0 15px rgba(255, 50, 50, 0.7);
   }
 </style>
-
-
-
-
-
-<!-- 15 Years in Service Section -->
-<section class="fifteen-years-section text-white py-5">
-  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
-    
-    <!-- Text -->
-    <div class="col-md-6 mb-4 mb-md-0 animate-slideup">
-      <h2 class="display-5 fw-bold">Celebrating 15 Years of Flavor & Community</h2>
-      <p class="lead mt-3">
-        For over 15 years, Chill Grapevine has been more than a bar and grill — it’s been a home for great food, live music, 
-        and unforgettable memories. We’re proud to serve the community that’s made every moment worth celebrating.
-      </p>
-    </div>
-
-    <!-- Image -->
-    <div class="col-md-5 animate-slideup" style="animation-delay: 0.3s;">
-      <img src="assets/15years.jpg" alt="15 Years Celebration" class="img-fluid rounded-4 shadow-lg">
-    </div>
-
-  </div>
-</section>
-
-
-
-
 
 
 
