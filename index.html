@@ -100,19 +100,21 @@
       border: none;
     }
 
-    .dropdown-menu {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease;
-      display: block;
-      pointer-events: none;
-    }
+ /* Smooth dropdown animation without breaking Bootstrap */
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  /* do NOT touch display / visibility / pointer-events here */
+}
 
-    .nav-item.dropdown.show > .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
+/* When Bootstrap adds .show, we just fade it in */
+.nav-item.show > .dropdown-menu,
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
     @media (max-width: 991.98px) {
       .navbar-collapse {
@@ -350,15 +352,15 @@ footer .small {
     <div class="collapse navbar-collapse w-100 mt-3 order-4" id="navbarNav">
       <ul class="navbar-nav mx-auto w-100 justify-content-center gap-3">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="assets/chill.pdf">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Experience">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="Menu.html">Menu</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item dropdown me-3">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Locations
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="index.html">Grapevine</a></li>
+            <li><a class="dropdown-item" href="index1.html">Grapevine</a></li>
             <li><a class="dropdown-item" href="index2.html">Lewisville</a></li>
           </ul>
         </li>
@@ -375,7 +377,7 @@ style="background: url('assets/heroo.png') center/cover no-repeat; min-height: 1
     <h1>Welcome to Chill </h1>
     <p>Your go-to bar for good drinks, better music, and the best crowd.</p>
     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-      <a href="#" class="btn btn-primary">Our Menu</a>
+      <a href="Menu.html" class="btn btn-primary">Our Menu</a>
       <a href="#" class="btn btn-primary">Events</a>
     </div>
   </div>
@@ -508,7 +510,7 @@ style="background: url('assets/heroo.png') center/cover no-repeat; min-height: 1
 
     <!-- Buttons -->
     <div class="d-flex flex-wrap justify-content-center gap-4 animate-fadeup">
-      <a href="assets/chill.pdf" target="_blank" class="menu-btn btn-main">View Menu</a>
+      <a href="Menu.html" target="_blank" class="menu-btn btn-main">View Menu</a>
       <a href="CateringMenu.html" class="menu-btn btn-outline">Catering Menu</a>
     </div>
   </div>
@@ -1121,20 +1123,56 @@ style="background: url('assets/heroo.png') center/cover no-repeat; min-height: 1
 
     <div class="row g-4">
       <!-- Contact Info -->
-      <div class="col-md-5 animate-fadeup">
-        <div class="p-4 rounded-4 h-100 contact-info">
-          <h5 class="fw-bold mb-3 text-danger">Contact Details</h5>
-          <p><i class="fas fa-map-marker-alt me-2 text-danger"></i> Main Street, Grapevine, TX</p>
-          <p><i class="fas fa-phone me-2 text-danger"></i> <a href="tel:(817)310-0004" class="contact-link">(817) 310-0004</a></p>
-          <p><i class="fas fa-envelope me-2 text-danger"></i> <a href="mailto:info@chillgrapevine.com" class="contact-link">info@chillgrapevine.com</a></p>
+<div class="col-md-5 animate-fadeup">
+  <div class="p-4 rounded-4 h-100 contact-info">
 
-          <div class="mt-4">
-            <a href="https://www.facebook.com/ChillBarGrapevine" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/chillbargrapevine/?hl=en" class="social-link me-3"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@chillbardfw" class="social-link"><i class="fab fa-tiktok"></i></a>
-          </div>
-        </div>
-      </div>
+    <h5 class="fw-bold mb-3 text-danger">Contact Details</h5>
+
+    <!-- Grapevine Location -->
+    <p class="fw-semibold text-uppercase small text-danger mb-1">Grapevine</p>
+    <p class="mb-1">
+      <i class="fas fa-map-marker-alt me-2 text-danger"></i>
+      814 S Main St, Grapevine, TX 76051
+    </p>
+    <p class="mb-3">
+      <i class="fas fa-phone me-2 text-danger"></i>
+      <a href="tel:+18173100004" class="contact-link">(817) 310-0004</a>
+    </p>
+
+    <!-- Lewisville Location -->
+    <p class="fw-semibold text-uppercase small text-danger mb-1">Lewisville</p>
+    <p class="mb-1">
+      <i class="fas fa-map-marker-alt me-2 text-danger"></i>
+      2513 S Stemmons Fwy, Lewisville, TX 75067
+    </p>
+    <p class="mb-3">
+      <i class="fas fa-phone me-2 text-danger"></i>
+      <a href="tel:+19723152445" class="contact-link">(972) 315-2445</a>
+    </p>
+
+    <!-- Email -->
+    <p class="mb-3">
+      <i class="fas fa-envelope me-2 text-danger"></i>
+      <a href="mailto:Ryan@chillbardfw.com" class="contact-link">
+        Ryan@chillbardfw.com
+      </a>
+    </p>
+
+    <!-- Socials -->
+    <div class="mt-2">
+      <a href="https://www.facebook.com/ChillBarGrapevine" class="social-link me-3">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/chillbargrapevine/?hl=en" class="social-link me-3">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@chillbardfw" class="social-link">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+
+  </div>
+</div>
 
       <!-- Contact Form -->
       <div class="col-md-7 animate-fadeup" style="animation-delay: 0.3s;">
@@ -1285,7 +1323,7 @@ style="background: url('assets/heroo.png') center/cover no-repeat; min-height: 1
   <br>
   <a href="privacypolicy.html" class="footer-link text-decoration-none">Privacy Policy</a>
   <br>
-  <a href="https://EliseoWebDev.com" target="_blank" rel="noopener" class="footer-link dev-credit text-decoration-none mt-2">Created by EliseoWebDev.com</a>
+  <a href="https://Echelonwebsites.com" target="_blank" rel="noopener" class="footer-link dev-credit text-decoration-none mt-2">Created by Echelonwebsites.com</a>
 </div>
   </div>
 </footer>

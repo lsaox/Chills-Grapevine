@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chill Menu</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <style>
+    @font-face {
+      font-family: 'Bronco';
+      src: url('assets/fonts/BroncoRegular.woff2') format('woff2'),
+           url('assets/fonts/BroncoRegular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root{
+      --bg:#000;
+      --panel: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.14);
+      --glow: rgba(255, 0, 0, 0.14);
+      --accent: #ff4747;
+    }
+
+    body{
+      background: linear-gradient(-45deg, #000000, #330000, #111111, #550000);
+      background-size: 400% 400%;
+      animation: gradientShift 14s ease infinite;
+      font-family: 'Bronco', serif;
+      color: #fff;
+      margin: 0;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* keep your existing navbar look */
+    .navbar{
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.6rem;
+      padding-bottom: 1.6rem;
+    }
+
+    .navbar-brand img{ height: 90px; object-fit: contain; }
+
+    .nav-link{
+      color: #fff !important;
+      font-weight: 500;
+      font-size: 1.6rem;
+      transition: color 0.2s ease;
+      text-align: center;
+    }
+    .nav-link:hover{ color: red !important; }
+
+    .navbar-icons{
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 1.2rem;
+      font-size: 1.3rem;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .navbar-icons a{ color:#fff; transition: color .2s ease; }
+    .navbar-icons a:hover{ color: rgb(224,0,0); }
+
+    @media (max-width: 991.98px){
+      .navbar-collapse{ text-align:center; margin-top:1rem; }
+      .navbar-nav{ flex-direction:column !important; gap:1rem !important; width:100%; align-items:center; }
+      .nav-item{ width:100%; }
+      .nav-link{ width:100%; display:block; }
+      .navbar-brand{ position: static !important; margin: 0 auto 1rem auto; }
+      .navbar-icons{ position: relative; right:0; margin-left:auto; transform:none; top:auto; }
+    }
+
+    /* page spacing under fixed-ish nav */
+    .page-wrap{
+      padding-top: 2.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .menu-hero{
+      padding: 3.5rem 0 1.25rem;
+      text-align: center;
+    }
+
+    .menu-hero h1{
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .menu-hero p{
+      color: rgba(255,255,255,0.75);
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .panel{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 0 35px var(--glow);
+      overflow: hidden;
+    }
+
+    .panel-top{
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .panel-top .title{
+      font-size: 1.35rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .btn-chill{
+      background: linear-gradient(135deg, rgb(99, 0, 0), #460000) !important;
+      color: #fff !important;
+      border: 2px solid rgba(255, 71, 71, 0.55) !important;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 50px;
+      padding: 0.65rem 1.4rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 15px rgba(255, 70, 70, 0.35);
+    }
+    .btn-chill:hover{
+      background: #ff4747 !important;
+      transform: translateY(-1px);
+      box-shadow: 0 0 25px rgba(255, 70, 70, 0.55);
+    }
+
+    .btn-outline-chill{
+      background: transparent !important;
+      border: 2px solid rgba(255,255,255,0.22) !important;
+      color: #fff !important;
+      border-radius: 50px;
+      padding: 0.65rem 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .btn-outline-chill:hover{
+      border-color: rgba(255,71,71,0.65) !important;
+      color: #ffb6b6 !important;
+      background: rgba(255,71,71,0.08) !important;
+    }
+
+    .pdf-frame{
+      width: 100%;
+      height: 82vh;
+      border: 0;
+      display:block;
+      background: rgba(0,0,0,0.35);
+    }
+    @media (max-width: 768px){
+      .pdf-frame{ height: 75vh; }
+      .nav-link{ font-size: 1.35rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar (same vibe as index) -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand mx-auto order-2" href="index.html">
+        <img src="assets/logo03.png" alt="CHILL Logo" />
+      </a>
+
+      <div class="navbar-icons order-3 d-flex gap-3">
+        <a href="tel:18173100004" aria-label="Call us"><i class="fas fa-phone"></i></a>
+        <a href="https://www.google.com/maps/dir//814+S+Main+St,+Grapevine,+TX+76051/" target="_blank" rel="noopener" aria-label="Find us on map">
+          <i class="fas fa-map-marker-alt"></i>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse w-100 mt-3 order-4" id="navbarNav">
+        <ul class="navbar-nav mx-auto w-100 justify-content-center gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#About">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#specials">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+          <li class="nav-item dropdown me-3">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Locations
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html">Grapevine</a></li>
+              <li><a class="dropdown-item" href="index2.html">Lewisville</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <div class="container">
+
+      <!-- Page header -->
+      <div class="menu-hero">
+        <h1>Menu</h1>
+        <p>Food, drinks, and everything in between.</p>
+      </div>
+
+      <!-- PDF panel -->
+      <div class="panel">
+        <div class="panel-top">
+          <p class="title m-0">Chill Menu (PDF)</p>
+
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="index.html" class="btn btn-outline-chill">Back</a>
+            <a href="assets/chill.pdf" target="_blank" rel="noopener" class="btn btn-chill">Open PDF</a>
+          </div>
+        </div>
+
+        <iframe
+          class="pdf-frame"
+          src="assets/chill.pdf#view=FitH"
+          title="Chill Menu PDF"
+        ></iframe>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
