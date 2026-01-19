@@ -662,173 +662,37 @@ style="background: url('assets/heroo.png') center/cover no-repeat; min-height: 1
     }
   }
 </style>
-<section id="specials" class="specials-section text-white text-center py-5" 
-  style="font-family: 'Bronco', serif; 
-         background: url('assets/Wood2.png') center/cover no-repeat fixed; 
-         position: relative; 
-         overflow: hidden;">
+<section id="specials"
+  class="specials-photos-section text-white py-5"
+  style="font-family: 'Bronco', serif;
+         background: url('assets/Wood2.png') center/cover no-repeat fixed;
+         position: relative;">
 
-  <style>
-    /* Title Glow */
-    .glow-title {
-      text-shadow: 0 0 20px #5a0000, 0 0 40px #5d00005f, 0 0 60px #4d0000;
-      color: #ffffff;
-      position: relative;
-      z-index: 2;
-      animation: flickerOn 2.5s ease-in-out;
-    }
+  <div class="container">
+    <!-- Title -->
+    <div class="text-center mb-4">
+      <h2 class="display-5 fw-bold text-uppercase">Weekly Specials & Events</h2>
+      <p class="lead text-light">
+        What’s happening this week at CHILL
+      </p>
+    </div>
 
-    /* Flicker animation (neon turning on) */
-    @keyframes flickerOn {
-      0% { opacity: 0; text-shadow: none; }
-      10% { opacity: 1; text-shadow: 0 0 5px #ff0000; }
-      20% { opacity: 0.3; }
-      40% { opacity: 1; text-shadow: 0 0 15px #ff1a1a, 0 0 30px #ff0000; }
-      60% { opacity: 0.5; }
-      80% { opacity: 1; text-shadow: 0 0 20px #ff4b4b, 0 0 40px #ff1a1a; }
-      100% { opacity: 1; }
-    }
-
-    /* Neon Board */
-    .specials-board {
-      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 0%, rgba(10, 0, 0, 0.85) 100%);
-      border: 2px solid rgba(255, 0, 0, 0.4);
-      border-radius: 25px;
-      box-shadow:
-        0 0 30px rgba(255, 0, 0, 0.3),
-        inset 0 0 25px rgba(255, 0, 0, 0.2),
-        0 0 10px rgba(255, 0, 0, 0.2);
-      padding: 3rem 2rem;
-      position: relative;
-      z-index: 1;
-      margin: 0 auto;
-      max-width: 900px;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    /* Glowing border */
- 
-
-    .specials-board-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Weekday Headers */
-    .specials-day {
-      color: #ffd48f;
-      font-size: 2.3rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px #000000, 0 0 25px #000000;
-      text-transform: uppercase;
-      animation: flickerOn 2.8s ease-in-out;
-    }
-
-    /* Events under each day */
-    .specials-events {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    /* Fade in when visible */
-    .specials-board.animate .specials-events {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Neon Colors */
-    .food-drink {
-      color: #00bfff;
-      text-shadow: 0 0 10px #00bfff, 0 0 25px #0099ff;
-      font-weight: 500;
-    }
-
-    .event {
-      color: #ff2828;
-      text-shadow: 0 0 10px #000000, 0 0 25px #cccccc;
-      font-weight: 500;
-    }
-
-    .dj {
-      color: #fff86b;
-      text-shadow: 0 0 10px #fff86b93, 0 0 25px #ffee0070;
-      font-weight: 600;
-    }
-
-    @media (max-width: 768px) {
-      .specials-day { font-size: 1.8rem; }
-      .specials-events { font-size: 1.05rem; }
-      .specials-board { padding: 2rem 1.5rem; }
-    }
-  </style>
-
-  <div class="container position-relative">
-    <h2 class="display-4 fw-bold text-uppercase mb-5 glow-title">Weekly Specials & Events</h2>
-
-    <div class="specials-board" id="specialsBoard">
-      <div class="specials-board-content">
-
-        <div class="specials-day">Monday</div>
-        <div class="specials-events">
-          <span class="food-drink">All Day Happy Hour • Half Off Pizzas</span><br>
-          <span class="event">Trivia @ 8PM • Karaoke @ 10PM</span>
+    <!-- Images -->
+    <div class="row g-4 justify-content-center">
+      <!-- Grapevine -->
+      <div class="col-lg-6">
+        <div class="specials-img-wrap">
+          <img
+            src="assets/grapevine.jpeg"
+            alt="Chill Grapevine weekly specials"
+            class="img-fluid">
         </div>
-
-        <div class="specials-day">Tuesday</div>
-        <div class="specials-events">
-          <span class="food-drink">$1.50 Tacos from 3PM • $3 Dos XX, Corona, Modelo Bottles</span><br>
-          <span class="event">BS Bingo @ 8PM • Karaoke @ 10PM</span>
-        </div>
-
-        <div class="specials-day">Wednesday</div>
-        <div class="specials-events">
-          <span class="food-drink">All Day Happy Hour • Half Off Burgers</span><br>
-          <span class="event">Karaoke @ 10PM</span>
-        </div>
-
-        <div class="specials-day">Thursday</div>
-        <div class="specials-events">
-          <span class="food-drink">All Day Happy Hour • $8.99 Chicken Fried Steak</span><br>
-          <span class="dj">DJ @ 10PM</span>
-        </div>
-
-        <div class="specials-day">Friday</div>
-        <div class="specials-events">
-          <span class="food-drink">Happy Hour Until 7PM</span><br>
-          <span class="dj">DJ @ 10PM</span>
-        </div>
-
-        <div class="specials-day">Saturday</div>
-        <div class="specials-events">
-          <span class="food-drink">Happy Hour Until 7PM • $1.99 Mimosas • $2.99 Bloodys • Brunch till 3PM</span><br>
-          <span class="dj">DJ @ 10PM</span>
-        </div>
-
-        <div class="specials-day">Sunday</div>
-        <div class="specials-events">
-          <span class="food-drink">All Day Happy Hour • $1.99 Mimosas • $2.99 Bloodys • Brunch till 3PM • $3 Shiner Pints</span>
-        </div>
-
       </div>
+
+      <!-- Lewisville -->
+     
     </div>
   </div>
-
-  <script>
-    // Trigger the fade-in animation when scrolled into view
-    const specialsBoard = document.getElementById('specialsBoard');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) specialsBoard.classList.add('animate');
-      });
-    }, { threshold: 0.3 });
-    observer.observe(specialsBoard);
-  </script>
 </section>
 
 
