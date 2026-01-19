@@ -7,3 +7,28 @@
 }
 
 
+/* Ensure wood background is visible */
+.specials-photos-section{
+  padding: 5rem 0;
+  min-height: 520px;
+}
+
+/* Image wrapper – NO crop, centered */
+.specials-img-wrap{
+  background: rgba(0,0,0,0.35); /* subtle frame */
+  padding: 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image – NEVER crop */
+.specials-img-wrap img{
+  width: 100%;
+  max-width: 520px;   /* control size without cutting */
+  height: auto;       /* keeps natural aspect ratio */
+  object-fit: contain; /* 🔴 critical: no crop */
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
